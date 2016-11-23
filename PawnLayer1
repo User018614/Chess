@@ -1,0 +1,98 @@
+import java.awt.*;
+import objectdraw.*;
+
+public class PawnLayer1
+{
+     private DrawingCanvas canvas;
+     private double xLoc, yLoc, width, height;
+     private FilledOval top;
+     private FramedOval topFrame;
+
+     public void PawnLayer1 (double x, double y, double w, double h, DrawingCanvas c)
+     {
+          canvas = c;
+
+          xLoc = x;
+          yLoc = y;
+
+          width = w;
+          height = h;
+
+          top = new FilledOval (xLoc, yLoc, width, height, canvas);
+          topFrame = new FramedOval (xLoc, yLoc, width, height, canvas);
+     }
+
+     public void move (double dx, double dy)
+     {
+          top.move (dx, dy);
+          topFrame.move (dx, dy);
+     }
+
+     public void move (Location dxy)
+     {
+          double dx, dy;
+
+          dx = dxy.getX();
+          dy = dxy.getY();
+
+          top.move (dx, dy);
+          topFrame.move (dx, dy);
+     }
+     
+     public void moveTo (Location dxy)
+     {
+          PawnLayer1.move (PawnLayer1.getMovement (dxy));
+     }
+     
+     public Location getMovement (Location dxy)
+     {
+          Location movement;
+
+          double x, y;
+          double dx, dy;
+          double topX, topY;
+
+          dx = dxy.getX();
+          dy = dxy.getY();
+
+          topX = top.getLocation().getX();
+          topY = top.getLocation().getY();
+
+          x = dx - topX;
+          y = dy - topY;
+
+          movement = new Location (x, y);
+
+          return movement;
+     }
+
+     public double getWidth()
+     {
+          return top.getWidth();
+     }
+
+     public double getHeight()
+     {
+          return top.getHeight();
+     }
+
+     public Location getLocation ()
+     {
+          return top.getLocation()
+     }
+
+     public double getX ()
+     {
+          return top.getLocation().getX();
+     }
+     
+     public double getY ()
+     {
+          return top.getLocation().getY();
+     }
+     
+     public Color getColor () 
+     {
+          return top.getColor();
+     }
+}
