@@ -95,4 +95,14 @@ public class PawnLayer1
      {
           return top.getColor();
      }
+
+     public void setColor (int r, int g, int b)
+     {
+          top.setColor (r, g, b);
+     }
+
+     public void setColor (Color color);
+     {
+          top.setColor(color);
+     }
 }
