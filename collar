@@ -1,0 +1,38 @@
+import java.awt.*;
+import objectdraw.*;
+
+public class collar
+{
+	private DrawingCanvas canvas;
+	private int width, height;
+	private double xLoc, yLoc;
+	private Line[] fill;
+	
+	public void collar (double x, double y, int x, int y, DrawingCanvas c)
+	{
+		canvas = c;
+		
+		xLoc = x;
+		yLoc = y;
+		
+		width = w;
+		height = h;
+		
+		createCollar ()
+	}
+	
+	public void createCollar ()
+	{
+		fill = new Line[];
+		for (i = 0; i < fill.length; i ++)
+		{
+			Location tempLoc1, tempLoc2;
+			
+			tempLoc1 = new Location (calcTop);
+			tempLoc2 = new Location (calcBottom);
+			
+			Line[i] = new Line (tempLoc1, tempLoc2, canvas);
+		}
+	}
+}
+		
