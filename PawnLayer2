@@ -1,0 +1,77 @@
+import java.awt.*;
+import objectdraw.*;
+
+public class PawnLayer2
+{
+     private DrawingCanvas canvas;
+     private double xLoc, yLoc, width, height;
+     private int width, height;
+     private Line[] fill;
+     private double collarStartTopX, collarStartBottomX, collarStartTopY, collarStartBottomY, collarEndTopX, 
+          collarEndBottomX, collarEndTopY, collarEndBottomY;
+
+     public void PawnLayer2 (double x, double y, int w, int h, DrawingCanvas c)
+     {
+          canvas = c;
+          
+          xLoc = x;
+          yLoc = y;
+          
+          width = w;
+          height = h;
+          
+          collar = new Collar (xLoc, yLoc, width, height, canvas);
+     }
+
+     public void setColor (Color color)
+     {
+          collar.setColor (color);
+     }
+
+     public void move (double dx, double dy)
+     {
+          collar.move (dx, dy);
+     }
+
+     public void move (Location loc)
+     {
+          int dx = loc.getX(), dy = loc.getY();
+          collar.move (dx, dy);
+     }
+
+     public void moveTo (double dx, double dy)
+     {
+          collar.moveTo (dx, dy);
+     }
+
+     public void moveTo (Location loc)
+     {
+          int dx = loc.getX(), dy = loc.getY();
+          collar.moveTo (dx, dy);
+     }
+
+     public Location getLocation ()
+     {
+          return collar.getLocation();
+     }
+
+     public double getX()
+     {
+          return collar.getX();
+     }
+
+     public double getY()
+     {
+          return collar.getY();
+     }
+ 
+     public int getWidth ();
+     {
+          return collar.getWidth();
+     }
+
+     public int getHeight ()
+     {
+          return collar.getHeight();
+     }
+}
